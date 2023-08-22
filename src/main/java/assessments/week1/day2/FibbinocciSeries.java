@@ -1,4 +1,4 @@
-package week1.day2.Assessment;
+package assessments.week1.day2;
 
 public class FibbinocciSeries {
 	
