@@ -7,7 +7,10 @@ public class NegativeToPositiveNum {
 		
 		int num=-15;
 		int num1;
+		if(num<0)
+		{
 		num1=num*-1;
 		System.out.println("The Number" +num+"is converted to" + num1);
+		}
 	}
 }

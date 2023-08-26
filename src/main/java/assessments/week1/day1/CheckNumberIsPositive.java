@@ -6,10 +6,10 @@ public class CheckNumberIsPositive {
 
 	public static void main(String[] args) {
 
-		Scanner in = new Scanner(System.in);
+		Scanner inn = new Scanner(System.in);
 		System.out.println("Please enter num");
 
-		int num = in.nextInt();
+		int num = inn.nextInt();
 
 		if (num > 0) {
 			System.out.println("Given Number is Positive");

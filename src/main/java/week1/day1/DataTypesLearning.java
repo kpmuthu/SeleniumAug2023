@@ -5,10 +5,9 @@ public class DataTypesLearning {
 		int salpackage =40000;
 		boolean ismarried=true;
 		String uname="Petchimuthu";
-		System.out.println("My Age is "+salpackage);
+		System.out.println("My salary is "+salpackage);
 		System.out.println(ismarried);
 		System.out.println("user name is "+uname);
 		
 	}
-
 }
