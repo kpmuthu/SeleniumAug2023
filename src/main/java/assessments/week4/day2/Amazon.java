@@ -24,11 +24,14 @@ public class Amazon {
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("oneplus 9 pro");
 
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(Keys.ENTER);
-
-		String amount = driver.findElement(By.xpath("(//div[@cel_widget_id='MAIN-SEARCH_RESULTS-4']//div[3]//span)[2]"))
-				.getText();
-		System.out.println("Parent windonw amount " + amount);
-		String ratingcount = driver.findElement(By.xpath("//span[@class='a-size-base s-underline-text']")).getText();
+		Thread.sleep(2000);
+		String amount = driver.findElement(By.xpath("(//span[@class='a-price-whole'])[1]")).getText();
+		String updatedamount=amount+".00";
+		System.out.println("Parent windonw amount " + updatedamount);
+		
+		String firstamount = amount.replaceAll("\\D", "");
+		System.out.println(firstamount);
+		String ratingcount = driver.findElement(By.xpath("(//span[@class='a-size-base s-underline-text'])[1]")).getText();
 
 		String parenrtWindow = driver.getWindowHandle();
 		String pTitle = driver.getTitle();
@@ -47,24 +50,28 @@ public class Amazon {
 		System.out.println("Chile windoew Title " + cTitle);
 
 		driver.findElement(By.id("add-to-cart-button")).click();
-		Thread.sleep(10000);
-		
-		driver.switchTo().frame("(//iframe)[3]");
-		Thread.sleep(10000);
-		driver.findElement(By.xpath("//span[@id='attach-sidesheet-view-cart-button-announce']")).click();
-		
-		String amountAtc = driver.findElement(By.xpath("//span[@class='a-price sw-subtotal-amount']/span")).getText();
+		Thread.sleep(5000);
 
-		System.out.println("Add to cart sub total " + amountAtc);
+		Set<String> windowHandles1 = driver.getWindowHandles();
+		List<String> list1 = new ArrayList<>(windowHandles1);
+
+		driver.switchTo().window(list1.get(1));
+		String cTitle1 = driver.getTitle();
+		System.out.println("Chile windoew Title " + cTitle1);
+		// driver.switchTo().frame("(//iframe)[3]");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//span[@id='attach-sidesheet-view-cart-button-announce']/../input")).click();
+
+		String amountAtc = driver.findElement(By.xpath("//span[@id='sc-subtotal-amount-buybox']/span")).getText().trim();
 		
-		if(amount.equals(amountAtc))
-		{
+		System.out.println("Add to cart sub total " + amountAtc);
+
+		if (updatedamount.equals(amountAtc)) {
 			System.out.println("Test case passed");
-		}
-		else
-		{
+		} else {
 			System.out.println("Test case failed");
 		}
+		driver.quit();
 	}
 
 }
