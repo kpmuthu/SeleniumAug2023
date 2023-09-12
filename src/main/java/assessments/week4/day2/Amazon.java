@@ -26,13 +26,14 @@ public class Amazon {
 		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 		String amount = driver.findElement(By.xpath("(//span[@class='a-price-whole'])[1]")).getText();
-		String updatedamount=amount+".00";
+		String updatedamount = amount + ".00";
 		System.out.println("Parent windonw amount " + updatedamount);
-		
+
 		String firstamount = amount.replaceAll("\\D", "");
 		System.out.println(firstamount);
-		String ratingcount = driver.findElement(By.xpath("(//span[@class='a-size-base s-underline-text'])[1]")).getText();
-
+		String ratingcount = driver.findElement(By.xpath("(//span[@class='a-size-base s-underline-text'])[1]"))
+				.getText();
+		System.out.println(ratingcount);
 		String parenrtWindow = driver.getWindowHandle();
 		String pTitle = driver.getTitle();
 		System.out.println("Parent Window Title " + pTitle);
@@ -62,8 +63,9 @@ public class Amazon {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//span[@id='attach-sidesheet-view-cart-button-announce']/../input")).click();
 
-		String amountAtc = driver.findElement(By.xpath("//span[@id='sc-subtotal-amount-buybox']/span")).getText().trim();
-		
+		String amountAtc = driver.findElement(By.xpath("//span[@id='sc-subtotal-amount-buybox']/span")).getText()
+				.trim();
+
 		System.out.println("Add to cart sub total " + amountAtc);
 
 		if (updatedamount.equals(amountAtc)) {
