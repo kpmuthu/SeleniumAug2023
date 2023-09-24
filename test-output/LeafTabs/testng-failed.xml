@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [LeafTabs]" parallel="tests">
+  <test thread-count="2" verbose="5" name="Mergea and Duplicate(failed)" parallel="tests">
+    <classes>
+      <class name="assessments.week5.day2.DuplicateLeadTC003">
+        <methods>
+          <include name="DuplicateLeadTestCase"/>
+          <include name="precondition"/>
+          <include name="postcondition"/>
+        </methods>
+      </class> <!-- assessments.week5.day2.DuplicateLeadTC003 -->
+    </classes>
+  </test> <!-- Mergea and Duplicate(failed) -->
+</suite> <!-- Failed suite [LeafTabs] -->

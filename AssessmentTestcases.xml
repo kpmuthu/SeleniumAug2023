@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="LeafTabs" thread-count="2" parallel="tests"
+	verbose="5">
+	<test name="Create and Edit">
+		<classes>
+			<class name="assessments.week5.day2.CreateLeadTC001" />
+			<class name="assessments.week5.day2.EditLeadTC002" />
+		</classes>
+	</test> <!-- LeadsTestcases -->
+
+	<test name="Mergea and Duplicate">
+		<classes>
+			<class name="assessments.week5.day2.DuplicateLeadTC003" />
+			<class name="assessments.week5.day2.MergeLeadTC004" />
+			<class name="assessments.week5.day2.DeleteLeadTC005" />
+
+		</classes>
+	</test> <!-- LeadsTestcases -->
+</suite> <!-- LeafTabs -->

@@ -53,7 +53,7 @@ public class MergeContact {
 		 * 
 		 * System.out.println("Driver switched to Child window"); }
 		 */
-
+		
 		driver.findElement(By.xpath("(//table[@class='x-grid3-row-table'])[1]//td//a")).click();
 
 		driver.switchTo().window(list.get(0));

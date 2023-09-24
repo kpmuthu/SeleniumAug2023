@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="5" name="Failed suite [Leaftab]" parallel="classes">
+  <test thread-count="2" verbose="5" name="Leads-tabtwo(failed)" parallel="classes">
+    <classes>
+      <class name="week5.day2.DeleteLead">
+        <methods>
+          <include name="DeleteLeadTestCase"/>
+        </methods>
+      </class> <!-- week5.day2.DeleteLead -->
+      <class name="week5.day2.MergeLead">
+        <methods>
+          <include name="MergeLeadTestCase"/>
+        </methods>
+      </class> <!-- week5.day2.MergeLead -->
+    </classes>
+  </test> <!-- Leads-tabtwo(failed) -->
+</suite> <!-- Failed suite [Leaftab] -->
